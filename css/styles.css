@@ -1,0 +1,409 @@
+/* styles.css - Rediseño elegante oscuro + look turístico */
+
+/* ===== Fuentes ===== */
+:root{
+  --rojo: #c40000;
+  --rojo-oscuro: #8f0000;
+  --dorado: #caa231;
+  --fondo: #0f0f10;
+  --panel: #0b0b0c;
+  --texto-claro: #eeeeee;
+  --gris-trans: rgba(255,255,255,0.06);
+  --card-bg: #0f1112;
+}
+
+/* ===== Reset mínimo ===== */
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #060607 0%, #0f0f11 100%);
+  color:var(--texto-claro);
+  font-family: "Noto Sans", Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* ===== Header fijo ===== */
+header{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:68px;
+  background: linear-gradient(90deg,var(--rojo), var(--rojo-oscuro));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 1.25rem;
+  z-index:1000;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+.logo{
+  font-family: "Noto Serif JP", serif;
+  font-weight:700;
+  color: white;
+  font-size:1.35rem;
+  letter-spacing:0.6px;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+
+nav a{
+  color:rgba(255,255,255,0.95);
+  text-decoration:none;
+  padding:0.5rem .75rem;
+  border-radius:6px;
+  transition: all .22s ease;
+  font-weight:500;
+}
+
+nav a:hover{
+  transform:translateY(-2px);
+  background: rgba(0,0,0,0.12);
+  color:var(--dorado);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+}
+
+nav a.active{
+  color:var(--dorado);
+  border-bottom: 3px solid rgba(255,255,255,0.06);
+}
+
+/* ===== DROPDOWN IDIOMA ===== */
+.dropdown {
+  position: relative;
+}
+
+.drop-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  z-index: 9999;
+}
+
+.drop-btn:hover {
+  color: var(--dorado);
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  width: 180px;
+  padding: 5px 0;
+  display: none;
+  z-index: 99999;
+}
+
+.dropdown.open .dropdown-list {
+  display: block;
+}
+
+.dropdown-list button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-list button:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--dorado);
+}
+
+/* ===== Contenedor principal ===== */
+.container-main{
+  max-width:1200px;
+  margin:0 auto;
+  padding: 100px 20px 60px;
+}
+
+/* ===== Hero ===== */
+.hero{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  margin-bottom:32px;
+}
+
+.slider{
+  width:100%;
+  max-width:1100px;
+  height:420px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.6);
+  position:relative;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+.slider img.slide{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition: opacity .8s ease, transform .8s ease;
+  opacity:0;
+  position:absolute;
+  top:0; left:0;
+}
+
+.slider img.slide.visible{
+  opacity:1;
+  position:relative;
+}
+
+/* ===== Cards ===== */
+.grid, .galeria, .festivales{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+}
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform .22s ease;
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+.card:hover{
+  transform: translateY(-8px);
+  
+}
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-20deg);
+  transition: 0.7s;
+}
+
+.card:hover::after {
+  left: 120%;
+}
+
+/* ===== Footer ===== */
+footer{
+  margin-top:40px;
+  padding:20px;
+  text-align:center;
+  color:#ddd;
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+
+/* ===== Fade-in animación ===== */
+.fade-in{
+  animation: fadeInUp .7s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity:0; transform: translateY(8px); }
+  to { opacity:1; transform: translateY(0); }
+}/* ===== BOTONES DEL SLIDER ===== */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background .3s ease;
+}
+
+.slider-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.slider-btn.prev {
+  left: 15px;
+}
+
+.slider-btn.next {
+  right: 15px;
+}
+/* ===== MENSAJE POR HORA - ESTÉTICO Y A LA IZQUIERDA ===== */
+
+.mensaje-hora-box {
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto 10px auto;
+  display: flex;
+  justify-content: flex-start;    /* Alinea a la izquierda */
+  padding-left: 5px;              /* Pequeño margen */
+}
+
+.mensaje-hora-box p {
+  font-size: 0.9rem;                /* Más pequeño y elegante */
+  color: #dddddd;                 /* Gris claro suave (más bonito que amarillo) */
+  font-weight: 500;
+  text-align: left;               /* Fuerza alineación izquierda */
+  margin: 0;
+  opacity: 0;
+  animation: fadeInHora 1s ease forwards;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 4px rgba(0,0,0,0.6); /* Sutil, elegante */
+}
+
+@keyframes fadeInHora {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* ======================================================
+   NOTIFICACIÓN ELEGANTE (Aparece / desaparece)
+====================================================== */
+
+#notificacion {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(0,0,0,0.85);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s ease, transform .4s ease;
+  transform: translateY(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+  z-index: 999999;
+}
+
+#notificacion.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ================================
+   TRANSICIÓN ENTRE PÁGINAS
+================================ */
+
+body {
+  opacity: 0;
+  transition: opacity .6s ease-in-out;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+/* ================================
+   BOTÓN VOLVER ARRIBA
+================================ */
+
+#btn-top {
+  position: fixed;
+  bottom: 35px;
+  left: 35px;
+  background: var(--rojo);
+  color: white;
+  border: none;
+  font-size: 1.6rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  transition: transform .3s ease, background .3s ease;
+  z-index: 99998;
+}
+
+#btn-top:hover {
+  background: var(--rojo-oscuro);
+  transform: translateY(-4px);
+}
+/* PARALLAX SUAVE */
+.parallax {
+  transform: translateY(0px);
+  transition: transform .2s ease-out;
+}
+/* =============================
+   BOTÓN MODO CLARO / OSCURO
+============================= */
+
+#toggle-tema {
+  background: none;
+  border: 2px solid rgba(255,255,255,0.6);
+  color: white;
+  font-size: 1.2rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: .3s;
+}
+
+#toggle-tema:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* MODO CLARO */
+body.claro {
+  background: #f5f5f5;
+  color: #0a0a0a;
+}
+
+body.claro nav a {
+  color: #222;
+}
+
+body.claro header {
+  background: #ffffff;
+}
+
+body.claro .card {
+  background: #ffffff;
+  color: black;
+}
+
+body.claro footer {
+  color: black;
+}

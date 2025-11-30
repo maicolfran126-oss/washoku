@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Washoku - Gastronomía Japonesa</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Washoku 
+    <span style="color:var(--dorado); font-weight:600; font-size:0.85rem;">Cultural Project</span>
+  </div>
+
+  <nav aria-label="Navegación principal">
+
+  <nav aria-label="Navegación principal">
+    <ul>
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="gastronomia.html">Gastronomía</a></li>
+      <li><a href="festivales.html">Festivales</a></li>
+
+      <!-- IDIOMA -->
+      <li class="dropdown">
+        <button class="drop-btn">Idioma ▾</button>
+        <div class="dropdown-list">
+          <button onclick="cambiarIdioma('es')">Español</button>
+          <button onclick="cambiarIdioma('en')">English</button>
+          <button onclick="cambiarIdioma('jp')">日本語</button>
+          <button onclick="cambiarIdioma('fr')">Français</button>
+          <button onclick="cambiarIdioma('de')">Deutsch</button>
+          <button onclick="cambiarIdioma('it')">Italiano</button>
+          <button onclick="cambiarIdioma('pt')">Português</button>
+          <button onclick="cambiarIdioma('ru')">Русский</button>
+          <button onclick="cambiarIdioma('ko')">한국어</button>
+          <button onclick="cambiarIdioma('ar')">العربية</button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container-main">
+
+  <div class="mensaje-hora-box">
+  <p id="mensaje-hora"></p>
+</div>
+
+  <h3 id="texto-idioma" class="fade-in" style="text-align:center;">
+    Bienvenido a la gastronomía japonesa
+  </h3>
+
+  <!-- SLIDER COMPLETO -->
+<section class="hero">
+
+  <div class="slider fade-in">
+   <img class="slide visible parallax" src="../images/sushi.jpg">
+    <img class="slide parallax" src="../images/ramen.jpg">
+<img class="slide parallax" src="../images/tempura.jpg">
+
+    <!-- BOTONES -->
+    <button class="slider-btn prev">⟨</button>
+    <button class="slider-btn next">⟩</button>
+  </div>
+
+  <h1 id="titulo-animado" class="fade-in"></h1>
+
+  <p class="fade-in">La tradición gastronómica japonesa declarada Patrimonio de la Humanidad.</p>
+
+</section>
+
+
+  <section class="fade-in">
+    <h2>¿Qué es Washoku?</h2>
+    <p>Washoku es la cocina tradicional japonesa que combina equilibrio nutricional, estética y respeto por los ingredientes de temporada.</p>
+  </section>
+
+  <section class="fade-in">
+    <h2>Platos destacados</h2>
+    <div class="grid">
+
+      <article class="card fade-in">
+        <img src="../images/ramen.jpg">
+        <div class="card-body">
+          <h3>Ramen</h3>
+          <p>Un clásico plato de fideos en caldo.</p>
+        </div>
+      </article>
+
+      <article class="card fade-in">
+        <img src="../images/tempura.jpg">
+        <div class="card-body">
+          <h3>Tempura</h3>
+          <p>Verduras y mariscos rebozados.</p>
+        </div>
+      </article>
+
+      <article class="card fade-in">
+        <img src="../images/sushi.jpg">
+        <div class="card-body">
+          <h3>Sushi</h3>
+          <p>Arroz avinagrado con pescado fresco.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Washoku Cultural Project</p>
+</footer>
+
+<div id="notificacion"></div>
+
+<script src="../proyecto-Washoku/script.js"></script>
+
+<button id="btn-top">↑</button>
+
+</body>
+</html>
