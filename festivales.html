@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gastronomía Japonesa</title>
+  <title>Festivales Gastronómicos</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -20,8 +21,8 @@
   <nav>
     <ul>
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="gastronomia.html" class="active">Gastronomía</a></li>
-      <li><a href="festivales.html">Festivales</a></li>
+      <li><a href="gastronomia.html">Gastronomía</a></li>
+      <li><a href="festivales.html" class="active">Festivales</a></li>
 
       <li class="dropdown">
         <button class="drop-btn">Idioma ▾</button>
@@ -43,31 +44,22 @@
 </header>
 
 <main class="container-main">
+  <h1 class="fade-in">Festivales gastronómicos en Japón</h1>
 
-  <h1 class="fade-in">Platos tradicionales</h1>
-
-  <section class="galeria fade-in">
+  <section class="festivales fade-in">
     <article class="card fade-in">
-      <img src="../images/sushi.jpg">
+      <img src="../images/Hanami1.jpg" onerror="this.src='../images/sushi.jpg'">
       <div class="card-body">
-        <h3>Sushi</h3>
-        <p>El símbolo mundial de la gastronomía japonesa.</p>
+        <h3>Hanami</h3>
+        <p>Celebración de la primavera bajo los cerezos en flor.</p>
       </div>
     </article>
 
     <article class="card fade-in">
-      <img src="../images/ramen.jpg">
+      <img src="../images/te.jpg" onerror="this.src='../imagenes/te.jpg'">
       <div class="card-body">
-        <h3>Ramen</h3>
-        <p>Fideos en caldo con carne y huevo.</p>
-      </div>
-    </article>
-
-    <article class="card fade-in">
-      <img src="../images/tempura.jpg">
-      <div class="card-body">
-        <h3>Tempura</h3>
-        <p>Un estilo de fritura ligero y elegante.</p>
+        <h3>Festival del Té</h3>
+        <p>Evento dedicado al té verde japonés.</p>
       </div>
     </article>
   </section>
@@ -80,7 +72,7 @@
 
 <div id="notificacion"></div>
 
-<script src="../proyecto-Washoku/script.js"></script>
+<script src="script.js"></script>
 
 <button id="btn-top">↑</button>
 
