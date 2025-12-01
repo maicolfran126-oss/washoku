@@ -45,16 +45,16 @@ window.cambiarIdioma = function (lang) {
   };
 
   const imagenes = {
-    es: "../images/ramen.jpg",
-    en: "../images/ramen.jpg",
-    jp: "../images/sushi.jpg",
-    fr: "../images/tempura.jpg",
-    de: "../images/ramen.jpg",
-    it: "../images/tempura.jpg",
-    pt: "../images/ramen.jpg",
-    ru: "../images/sushi.jpg",
-    ko: "../images/ramen.jpg",
-    ar: "../images/te.jpg"
+    es: "images/ramen.jpg",
+    en: "images/ramen.jpg",
+    jp: "images/sushi.jpg",
+    fr: "images/tempura.jpg",
+    de: "images/ramen.jpg",
+    it: "images/tempura.jpg",
+    pt: "images/ramen.jpg",
+    ru: "images/sushi.jpg",
+    ko: "images/ramen.jpg",
+    ar: "images/te.jpg"
   };
 
   const textoElemento = document.getElementById("texto-idioma");
